@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="with=device-width, initial-scale=1.0" />
-    <title>Solvoable</title>
+    <title>Solvable</title>
   </head>
   <body>
     <!-- nav -->
@@ -194,5 +194,28 @@
         </div>
       </div>
     </section>
+
+    <section id="submission" class="submission">
+      <div class="container">
+        <h2>Submit your Project</h2>
+        <p>Ready to bring your solution to life? Submit your project below!</p>
+        <div class="form-placeholder">[To be added]</div>
+      </div>
+    </section>
+
+    <script>
+      document.querySelectorAll("a[href^=#]").forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttriute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+    </script>
   </body>
 </html>
