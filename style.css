@@ -141,7 +141,7 @@ section h2 {
   background: white;
   padding: 2rem;
   border-radius: 2rem;
-  box-shadow: 0 4px 6px rgba(0.0.1);
+  box-shadow: 0 4px 6px rgba(0.1);
   text-align: center;
   transition: transform 0.3s;
 }
@@ -202,29 +202,84 @@ section h2 {
 }
 
 .project-content {
-    padding: 1.5rem;
+  padding: 1.5rem;
 }
 
 .project-content h3 {
-    margin-bottom: 0.5rem;
-    color: #1e293b;
+  margin-bottom: 0.5rem;
+  color: #1e293b;
 }
 
 .requirements-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap:2rem;
-    margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
 }
 
 .requirement-box {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 rpx 6px rgba(0, 0, 0, 0.1);
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 rpx 6px rgba(0, 0, 0, 0.1);
 }
 
 .requirement-box h3 {
-    color: #3b82f6;
-    margin-bottom: 1rem;
+  color: #3b82f6;
+  margin-bottom: 1rem;
+}
+
+.requirement-box ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.requirement-box li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.requirement-box li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: bold;
+}
+
+.faq {
+  background: #f8fafc;
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 3rem auto 0;
+}
+
+.faq-item {
+  background: white;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2 px 4px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+  padding: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.faq-question:hover {
+  background: #f8fafc;
+}
+
+.faq-answer {
+    padding: 0 1.5rem 1.5rem;
+    color: #64748b;
 }
