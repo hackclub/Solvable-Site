@@ -1,10 +1,41 @@
 <!DOCTYPE html>
-<html lang="" en>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="with=device-width, initial-scale=1.0" />
     <title>Solvable</title>
+    <script>
+      function lget(key) {
+        try {
+          return localStorage.getItem(key);
+        } catch (e) {
+          return null;
+        }
+      }
+      function lset(key, value) {
+        try {
+          localStorage.setItem(key, value);
+        } catch (e) {}
+      }
+      function prefersDark() {
+        return (
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+      }
+      function getTheme() {
+        return lget("theme") || (prefersDark() ? "dark" : "light");
+      }
+      function setTheme(theme) {
+        lset("theme", theme);
+        document.querySelector("html").className = theme || getTheme();
+      }
+      function toggleTheme() {
+        setTheme(getTheme() === "dark" ? "light" : "dark");
+      }
+      setTheme(getTheme());
+    </script>
   </head>
   <body>
     <!-- nav -->
@@ -12,6 +43,7 @@
       <div class="container">
         <div class="logo">Solvable</div>
         <ul>
+          <button onclick="toggleTheme()">Toggle theme</button>
           <li><a href="#about">About</a></li>
           <li><a href="#how-it-works">How It Works</a></li>
           <li><a href="#requirements">Requirements</a></li>
@@ -151,7 +183,7 @@
           <div class="faq-item">
             <div class="faq-question">What is the max size?</div>
             <div class="faq-answer">
-              While there is not a strict restriction, it should be able to fit 
+              While there is not a strict restriction, it should be able to fit
               on most 3D printers (256x256mm).
             </div>
           </div>
@@ -191,7 +223,7 @@
       <div class="container">
         <h2>Submit your Project</h2>
         <p>Ready to bring your solution to life? Submit your project below!</p>
-        <div class="form-placeholder">[To be added]</div>
+        <div class="form">[To be added]</div>
       </div>
     </section>
 

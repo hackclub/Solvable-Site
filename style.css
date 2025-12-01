@@ -4,6 +4,30 @@
   box-sizing: border-box;
 }
 
+html,
+html.light {
+  color-scheme: light;
+  --text: #111;
+  --accent: #f80;
+  --bg: #eef;
+}
+
+html.dark {
+  color-scheme: dark;
+  --text: #dde;
+  --accent: #ec0;
+  --bg: #334;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+    --text: #dde;
+    --accent: #ec0;
+    --bg: #334;
+  }
+}
+
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -279,7 +303,80 @@ section h2 {
   background: #f8fafc;
 }
 
+.faq-question::after {
+  content: "▼";
+}
+
 .faq-answer {
-    padding: 0 1.5rem 1.5rem;
-    color: #64748b;
+  padding: 0 1.5rem 1.5rem;
+  color: #64748b;
+}
+
+.examples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.examples-card {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #10b981;
+}
+
+.example-card h3 {
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.example-card p {
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.resources {
+  background: #f8facf;
+}
+
+.resource-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.resource-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.resource-item h3 {
+  color: #3b82f6;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.submission {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+}
+
+.submission h2 {
+  color: white;
+}
+
+.form {
+  background: white;
+  padding: 3rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  color: #64748b;
+  font-style: italic;
 }
